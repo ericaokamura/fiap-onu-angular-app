@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
-## Access remote server
+## Access remote cloud server
 
 Access address (https://fiap-onu-angular-app.onrender.com) on browser.
 
