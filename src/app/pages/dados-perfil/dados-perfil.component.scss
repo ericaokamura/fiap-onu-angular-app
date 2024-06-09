@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    margin: 50px 0 0 100px;
+    display: inline-flexbox;
+}
+
+button {
+    margin: 50px 0 0 0;
+    border: none;
+    width: 200px;
+    text-align: left;
+    background-color: #FFFFFF;
+    color: #012E40;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+h2 {
+    margin: 30px 0 0 30px;
+    width: 200px;
+    color: #012E40;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+  
+.img-foto {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.image-cropper {
+    display: flex;
+    margin: 0 auto;
+    height: 100px;
+    width: 100%;
+}

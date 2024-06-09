@@ -1,0 +1,37 @@
+h1 {
+    color: #012E40;
+    text-align: center;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+img {
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    margin-top: 50px;
+    width: 153px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background-color: #024959;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    color: var(--White, #FFF);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

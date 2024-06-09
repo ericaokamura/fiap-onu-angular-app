@@ -1,0 +1,28 @@
+h1 {
+    color: #012E40;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+mat-slide-toggle {
+    width: 500px;
+    height: 100px;
+    margin-top: 20px;
+    display: block;
+}
+
+::ng-deep .mat-mdc-slide-toggle.mat-mdc-slide-toggle-checked:not(.mat-disabled) .mdc-switch__shadow {
+    background-color: #3CA6A6;
+}
+  
+::ng-deep .mat-mdc-slide-toggle.mat-mdc-slide-toggle-checked:not(.mat-disabled) .mdc-switch__track::after {
+    background-color: #3CA6A6 !important;
+}
+
+.main {
+    margin: 80px 0 0 200px;
+}

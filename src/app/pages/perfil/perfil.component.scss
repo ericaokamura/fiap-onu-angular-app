@@ -1,0 +1,140 @@
+
+h1 {
+    color: #012E40;
+    text-align: center;
+    font-family: Inter;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+h3 {
+    color: #012E40;
+    text-align: center;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.image-cropper img {
+    width: 240px;
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.image-cropper {
+    margin: 50px 0 0 100px;
+    width: 240px;
+    height: 240px;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    padding: 0px;
+    margin: 0 30px 0 0;
+    text-align: center;
+}
+
+.card img {
+    width: 300px;
+    height: 300px;
+}
+
+mat-card-header {
+    margin: 0;
+    padding: 20px 0 0 0;
+    width: 300px;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+mat-card-title {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #012E40;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+mat-card-actions button {
+    width: 200px;
+    color: #FFFFFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: bold;
+    font-weight: 600;
+    line-height: normal;
+}
+
+mat-card-actions {
+    display: block;
+    text-align: center;
+    width: 300px;
+}
+
+button {
+    margin-top:10px;
+    color: #FFFFFF;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 150px;
+    height: 66px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #024959;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.button-follow {
+    width: 202px;
+    height: 51px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 5px;
+    background: #3CA6A6;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.button-unfollow {
+    width: 202px;
+    height: 51px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 5px;
+    background: #026773;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+h5 {
+    color: #012E40;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

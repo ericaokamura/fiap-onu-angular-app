@@ -1,0 +1,56 @@
+<div class="menu">
+    <div class="icon">
+        <img style="width: 90px; height: 90px;" (click)="goTo('compra')" src="../../../assets/botanica.png">
+    </div>
+    <div *ngIf="logged"> 
+        <div class="menu-items">
+            <div class="selected-item">
+                <button (click)="goTo('venda')">
+                    <img style="width: 80px; height: 80px;" src="../../../assets/venda.png">
+                </button>
+                <div *ngIf="itemMenuVenda">
+                    <div class="selected"></div>
+                </div>
+            </div>
+            <div class="selected-item">
+                <button (click)="goTo('compra')">
+                    <img style="width: 80px; height: 80px;" src="../../../assets/compra.png">
+                </button>
+                <div *ngIf="itemMenuCompra">
+                    <div class="selected"></div>
+                </div>
+            </div>
+            <div class="selected-item">
+                <button (click)="goTo('doacao')">
+                    <img style="width: 80px; height: 80px;" src="../../../assets/doacao.png">
+                </button>
+                <div *ngIf="itemMenuDoacao">
+                    <div class="selected"></div>
+                </div>
+            </div>
+            <div class="selected-item">
+                <button (click)="goTo('recebimento')">
+                    <img style="width: 80px; height: 80px;" src="../../../assets/recebimento.png">
+                </button>
+                <div *ngIf="itemMenuRecebimento">
+                    <div class="selected"></div>
+                </div>
+            </div>
+            <div class="selected-item-right-cart" sytle="margin-left: 200px">
+                <button class="button-right;" (click)="goTo('cart')">
+                    <img style="width: 80px; height: 80px;" src="../../../assets/cart.png">
+                </button>
+            </div>
+            <div class="selected-item-right">
+                <button class="button-right;" (click)="goTo('dados-perfil')">
+                    <img style="width: 80px; height: 80px;" src="../../../assets/user.png">
+                </button>
+            </div>
+            <div class="selected-item-right">
+                <button class="button-right;" (click)="goTo('config')">
+                    <img style="width: 80px; height: 80px;" src="../../../assets/config.png">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+<app-menu-bar></app-menu-bar>
+<div *ngIf="perfilPublicoSeguido; else elseBlock1">
+    <div style="text-align: center; display: flex; width: 500px; height: 200px;">
+        <div class="image-cropper">
+            <img class="foto-perfil" src="{{'data:image/jpg;base64,' + perfilSeguido!.fotoPerfil}}"/>
+        </div>
+        <div style="display: inline-flexbox; width: 300px; height: 100%; margin-left: 200px;">
+            <div style="margin: 100px 0 0 0">
+                <h1 style="width: 300px;">{{ usuario.nomeCompleto }}</h1>
+            </div>
+            <div>
+                <div *ngIf="status==='seguir'; else elseBlock">
+                    <button (click)="seguir()" class="button-follow">
+                        Seguir
+                    </button>
+                </div>
+                <ng-template #elseBlock>
+                    <button (click)="unfollow('')" class="button-unfollow">
+                        Seguindo
+                    </button>
+                </ng-template>
+            </div>
+            <div style="display: inline-flex; justify-content: space-between; margin-top: 30px;">
+                <div style="display: inline-flexbox; padding: 0 20px">
+                    <h5 style="text-align: center;">{{ perfilSeguido!.numeroSeguidores }}</h5>
+                    <h5 style="text-align: center;">Seguidores</h5>
+                </div>
+                <div style="display: inline-flexbox; padding: 0 20px">
+                    <h5 style="text-align: center;">{{ perfilSeguido!.numeroAnuncios }}</h5>
+                    <h5 style="text-align: center;">Anúncios</h5>
+                </div>
+                <div style="display: inline-flexbox; padding: 0 20px">
+                    <h5 style="text-align: center;">{{ perfilSeguido!.numeroSeguindo }}</h5>
+                    <h5 style="text-align: center;">Seguindo</h5>
+                </div>  
+            </div>
+            <div style="display: flex; margin-left: -200px; margin-top: 50px;">
+                <div *ngFor="let anuncio of anuncios">
+                    <mat-card class="card">
+                        <img mat-card-image src="{{'data:image/jpg;base64,' + anuncio.fotoAnuncio}}" alt="Foto do Anúncio">
+                        <mat-card-header>
+                          <mat-card-title>{{ anuncio.titulo }}</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-actions>
+                          <button (click)="visualizar(anuncio)" mat-button>Visualizar</button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #elseBlock1>
+    <div style="text-align: center; display: flex; width: 500px; height: 200px;">
+        <div class="image-cropper">
+            <img class="foto-perfil" src="{{'data:image/jpg;base64,' + perfilSeguido!.fotoPerfil}}"/>
+        </div>
+        <div style="display: inline-flexbox; width: 300px; height: 100%; margin-left: 200px;">
+            <div style="margin: 100px 0 0 0">
+                <h1 style="width: 300px;">{{ usuario.nomeCompleto }}</h1>
+            </div>
+            <div>
+                <ng-container *ngIf="status === 'seguir'; else elseBlockAguardando">
+                    <button (click)="seguir()" class="button-follow">
+                        Seguir
+                    </button>
+                </ng-container>
+                <ng-template #elseBlockAguardando>
+                    <ng-container *ngIf="status === 'aguardandoAprovacao'; else elseBlockSeguindo">
+                        <button (click)="unfollow('aguardandoAprovacao')" class="button-unfollow">
+                            Aguardando
+                        </button>
+                    </ng-container>
+                </ng-template> 
+                <ng-template #elseBlockSeguindo>
+                    <ng-container *ngIf="status === 'seguindo'">
+                        <button (click)="unfollow('seguindo')" class="button-unfollow">
+                            Seguindo
+                        </button>
+                    </ng-container>
+                </ng-template>
+            </div>
+            <div style="display: inline-flex; justify-content: space-between; margin-top: 30px;">
+                <div style="display: inline-flexbox; padding: 0 20px">
+                    <h5 style="text-align: center;">{{ perfilSeguido!.numeroSeguidores }}</h5>
+                    <h5 style="text-align: center;">Seguidores</h5>
+                </div>
+                <div style="display: inline-flexbox; padding: 0 20px">
+                    <h5 style="text-align: center;">{{ perfilSeguido!.numeroAnuncios }}</h5>
+                    <h5 style="text-align: center;">Anúncios</h5>
+                </div>
+                <div style="display: inline-flexbox; padding: 0 20px">
+                    <h5 style="text-align: center;">{{ perfilSeguido!.numeroSeguindo }}</h5>
+                    <h5 style="text-align: center;">Seguindo</h5>
+                </div>  
+            </div>
+            <div *ngIf="!amigos; else elseBlockAmigos">
+                <img style="width:100px; height:100px; margin: 50px 0 20px 0;" src="../../../assets/lock.png">
+                <h3>Perfil Privado</h3>
+            </div>
+            <ng-template #elseBlockAmigos>
+                <div style="display: flex; margin-left: -200px; margin-top: 50px;">
+                    <div *ngFor="let anuncio of anuncios">
+                        <mat-card class="card">
+                            <img mat-card-image src="{{'data:image/jpg;base64,' + anuncio.fotoAnuncio}}" alt="Foto do Anúncio">
+                            <mat-card-header>
+                            <mat-card-title>{{ anuncio.titulo }}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-actions>
+                            <button (click)="visualizar(anuncio)" mat-button>Visualizar</button>
+                            </mat-card-actions>
+                        </mat-card>
+                    </div>  
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</ng-template>

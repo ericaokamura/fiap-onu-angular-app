@@ -1,0 +1,22 @@
+<app-menu-bar></app-menu-bar>
+<div class="venda-form">
+    <form>
+        <div class="field">
+            <p class="edit-label">Qual o título do anúncio?</p>
+            <input type='text' style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="titulo" [(ngModel)]="anuncio.titulo">
+        </div>
+        <div class="field">
+            <p class="edit-label">Descreva o seu produto:</p>
+            <input type='text' style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="descricao" [(ngModel)]="anuncio.descricao">
+        </div>  
+        <div class="field">
+            <p class="edit-label">Qual o valor (R$) do seu produto?</p>
+            <input type='text' style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="preco" [(ngModel)]="anuncio.preco">
+        </div>
+        <div class="field">
+            <p class="edit-label">Faça upload da foto do seu produto:</p>
+            <input type="file" id="file" style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="fotoAnuncio" (change)="saveFile($event.target)">
+        </div> 
+        <button (click)="publicar()">Publicar</button>
+    </form>
+</div>

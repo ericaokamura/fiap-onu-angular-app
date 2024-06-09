@@ -1,0 +1,15 @@
+<div class=card-carrinho>
+    <div class="texto">
+        <p>
+            {{ produto }}
+        </p>
+        <div *ngIf="tipoAnuncio === 'Venda'">
+            <p>
+                R$ {{ preco }}
+            </p>
+        </div>
+    </div>
+    <div class="imagem">
+        <img src="{{'data:image/jpg;base64,' + fotoAnuncio}}"/>
+    </div>
+</div>

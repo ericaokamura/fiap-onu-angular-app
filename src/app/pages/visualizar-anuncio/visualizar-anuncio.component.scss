@@ -1,0 +1,90 @@
+.foto-anuncio {
+    width: 524px;
+    height: 660px;
+    flex-shrink: 0;
+    border: 0.8px solid #000000
+}
+
+.image-cropper img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.image-cropper {
+    width: 100px;
+    height: 100px;
+}
+  
+.foto-perfil {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.esquerdo {
+    margin-top: 50px;
+    margin-left: 200px;
+    display: inline-flexbox;
+}
+
+.text-titulo {
+    padding-bottom: 0px;
+    width: 100%;
+    text-align: right;
+}
+
+.text-titulo p {
+    margin-top: 60px;
+}
+
+p { 
+    margin-top: 30px;
+    color: #024959;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: bold;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.texts {
+    width: 600px;
+    margin-top: 20px 0 0;
+    text-align: right;
+}
+
+button {
+    text-align: center;
+    width: 200px;
+    height: 66px;
+    flex-shrink: 0;
+    color: #FFFFFF;
+    font-size: 18px;
+    border-radius: 8px;
+    background: #024959;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.preco {
+    margin-top: 200px;
+    font-style: bold;
+}
+
+.direito {
+    margin-top: 150px;
+    display: inline-flexbox;
+}
+
+.texts p {
+    color: #024959;
+    text-align: right;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

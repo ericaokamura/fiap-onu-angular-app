@@ -1,0 +1,41 @@
+<app-menu-bar></app-menu-bar>
+<div style="display: inline-flex; justify-content: space-evenly;">
+    <div class="esquerdo">
+        <div style="display: flex; padding: 20px 0 10px 0;">
+            <div class="image-cropper">
+                <img (click)="goToProfilePage()" class="foto-perfil" src="{{'data:image/jpg;base64,' + usuarioAnuncio.fotoPerfil}}"/>
+            </div>
+            <div class="text-titulo">
+                <p>
+                    {{ titulo }}
+                </p>
+            </div>
+        </div>
+        <div>
+            <img class="foto-anuncio" src="{{'data:image/jpg;base64,' + fotoAnuncio}}"/>
+        </div>
+    </div>
+    <div class="direito">
+        <div class="texts">
+            <p><strong>Descrição</strong></p>
+            <p>
+                {{ descricao }}
+            </p>
+        </div>
+        <div class="texts">
+            <div *ngIf="tipoAnuncio === 'Venda'">
+                <p class="preco"><strong>Preço</strong></p>
+                <p>R$ {{ preco }}</p>
+            </div>
+        </div>
+        <div class="texts">
+            <div *ngIf="tipoAnuncio === 'Venda'; else elseBlock;">
+                <button (click)="comprar()">Comprar</button>
+            </div>
+            <ng-template #elseBlock>
+                <button (click)="comprar()">Receber</button>
+            </ng-template>
+        </div>
+       
+    </div>
+</div>

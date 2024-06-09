@@ -1,0 +1,20 @@
+<app-menu-bar></app-menu-bar>
+<div class="login-form">
+    <div>
+        <h1>Zero Waste Market</h1>
+    </div>
+    <form>
+        <div>
+            <input type='text' style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="nomeUsuario" [(ngModel)]="login.nomeUsuario">
+            <p class="edit-label">Login</p>
+        </div>
+        <div>
+            <input type='text' style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="senha" [(ngModel)]="login.senha">
+            <p class="edit-label">Senha</p>
+        </div>  
+        <p class="esqueceu-senha">Esqueceu a senha ?</p>
+        <p class="cadastro">Não é cadastrado(a) ? Cadastre-se <a routerLink="/cadastro">aqui</a></p>
+        <button (click)="logar()">ENTRAR</button>
+    </form>
+</div>
+

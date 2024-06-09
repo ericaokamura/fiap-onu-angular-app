@@ -1,0 +1,40 @@
+<app-menu-bar></app-menu-bar>
+<div *ngIf="!sucesso; else elseBlock" class="info-pagamento">
+    <p class="header">Informações de Pagamento</p>
+    <div class="form-pagamento">
+        <form>
+            <div style="display: inline-flexbox;">
+                <div style="display: block; margin: 20px 0 20px 0;">
+                    <p class="edit-label">Titular:</p>
+                    <input type='text' style="display:block; width: 500px; height: 30px;" name="titular">
+                </div>
+                <div style="display: block; margin: 20px 0 20px 0;">
+                    <p class="edit-label">CPF/CNPJ:</p>
+                    <input type='text' style="display:block; width: 500px; height: 30px;" name="cpfcnpj">
+                </div>  
+                <div style="display: block; margin: 20px 0 20px 0;">
+                    <p class="edit-label">Número do Cartão:</p>
+                    <input type='text' style="display:block; width: 500px; height: 30px;" name="numerocartao">
+                </div>  
+                <div style="display: block; margin: 20px 0 20px 0;">
+                    <p class="edit-label">Validade (MM/AAAA):</p>
+                    <input type='text' style="display:block; width: 500px; height: 30px;" name="validade">
+                </div>  
+                <div style="display: block; margin: 20px 0 20px 0;">
+                    <p class="edit-label">Código de Segurança (CVV):</p>
+                    <input type='text' style="display:block; width: 500px; height: 30px;" name="cvv">
+                </div>
+                <div style="display: block; margin: 20px 0 20px 0;">
+                    <p class="edit-label">Parcelas:</p>
+                    <input type='text' style="display:block; width: 500px; height: 30px;" name="cvv">
+                </div>
+            </div>
+            <div style="display: block; margin: 20px 0 20px 0;">
+                <button (click)="concluirPagamento()">Concluir Pagamento</button>
+            </div>
+        </form>
+    </div>
+</div>
+<ng-template #elseBlock>
+    <app-pagamento-sucesso></app-pagamento-sucesso>
+</ng-template>

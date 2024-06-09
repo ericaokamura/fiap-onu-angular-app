@@ -1,0 +1,23 @@
+<app-menu-bar></app-menu-bar>
+<div style="display: inline-flex;">
+    <div class="pesquisa">
+        <input type='search' name="pesquisa-input" placeholder="Pesquisa por descrição do produto" (keyup)="getDescricao($event.target)">
+        <img src="../../../../assets/lupa3.png" (click)="pesquisar()">    
+    </div>
+    <div class="ordenador">
+        <div class="ordenador-text">
+            <p style="height: 50px;">Ordenar por:</p>
+        </div>
+        <div class="dropdown">
+            <button style="border: 0;" class="dropbtn">Selecione</button>
+            <div class="dropdown-content">
+            <a (click)="ordenarPorDataHoraPublicacao()">Publicações mais recentes</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngFor="let anuncios of anunciosArray">
+    <div *ngFor="let anuncio of anuncios" class="anuncios">
+        <app-card-anuncio [id]="anuncio.id" [titulo]="anuncio.titulo" [fotoAnuncio]="anuncio.fotoAnuncio"></app-card-anuncio>
+    </div>
+</div>

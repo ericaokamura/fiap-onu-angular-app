@@ -1,0 +1,26 @@
+.card-carrinho {
+    width: 400px;
+    height: 350px;
+    margin-bottom: 300px;
+    flex-shrink: 0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.imagem img {
+    text-align: right;
+    width: 300px;
+    height: 350px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #FFFFFF;
+}
+
+.texto p {
+    color: var(--DarkGreen-1, #024959);
+    text-align: right;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

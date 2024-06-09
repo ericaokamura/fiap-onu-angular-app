@@ -1,0 +1,18 @@
+<app-menu-bar></app-menu-bar>
+<div class="doacao-form">
+    <form>
+        <div class="field">
+            <p class="edit-label">Qual o título do anúncio?</p>
+            <input type='text' style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="titulo" [(ngModel)]="anuncio.titulo">
+        </div>
+        <div class="field">
+            <p class="edit-label">Descreva a sua doação:</p>
+            <input type='text' style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="descricao" [(ngModel)]="anuncio.descricao">
+        </div>
+        <div class="field">
+            <p class="edit-label">Faça upload da foto da sua doação:</p>
+            <input type="file" id="file" style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="fotoAnuncio" (change)="saveFile($event.target)">
+        </div> 
+        <button (click)="publicar()">Publicar</button>
+    </form>
+</div>

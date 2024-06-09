@@ -1,0 +1,17 @@
+<app-menu-bar></app-menu-bar>
+<div>
+    <p>Carrinho de Compras</p>
+    <div style="display: inline-flex;"> 
+        <div style="width: 400px; text-align: right; margin: 100px 0 0 200px;">
+            <div *ngFor="let produto of produtosComTipoAnuncio">
+                <app-card-carrinho [tipoAnuncio]="produto.tipoAnuncio" [produto]="produto.titulo" [preco]="produto.preco" [fotoAnuncio]="produto.fotoAnuncio"></app-card-carrinho>
+            </div>
+        </div>
+        <div style="width: 800px; text-align: right; margin: 150px 0 0 0;">
+            <a [routerLink]="['/compra']" routerLinkActive="is-active">continuar comprando</a>
+            <p>Total: R$ {{ total }}</p>
+            <button (click)="finalizarCompra()">Finalizar Compra</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,28 @@
+<app-menu-bar></app-menu-bar>
+<div style="display: inline-flex; margin: 50px; height: 100%;">
+    <div style="display: inline-flexbox;">
+        <div class="image-cropper">
+            <div class="img-foto">
+                <img (click)="goTo('meu-perfil')" src="{{'data:image/jpg;base64,' + perfil.fotoPerfil}}"/>
+            </div>
+            <div style="height: 100px;">
+                <h2>{{ usuario.nomeCompleto }}</h2>
+            </div>
+        </div>
+        <div class="menu">
+            <h6><button (click)="goTo('dados-pessoais')">Dados Pessoais</button></h6>
+            <h6><button (click)="goTo('minhas-vendas')">Minhas Vendas</button></h6>
+            <h6><button (click)="goTo('minhas-compras')">Minhas Compras</button></h6>
+            <h6><button (click)="goTo('minhas-doacoes')">Minhas Doações</button></h6>
+            <h6><button (click)="goTo('meus-recebidos')">Meus Recebidos</button></h6>
+            <h6><button (click)="goTo('solicitacoes-amizade')">Solicitações de Amizade</button></h6>
+            <h6><button (click)="endSession()">Sair</button></h6>
+        </div>
+    </div>
+    <div style="width: 0.5px; height: 1000px; background: #EAEAF6; margin: 0 0 0 120px"></div>
+    <div style="margin-left: 120px;">
+        <app-dados-perfil-right-side [menuItem]="menuItem" [usuario]="usuario" [perfil]="perfil"></app-dados-perfil-right-side>
+    </div>
+</div>
+
+

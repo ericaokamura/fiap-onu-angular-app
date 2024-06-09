@@ -1,0 +1,31 @@
+<app-menu-bar></app-menu-bar>
+<div *ngIf="!sucesso; else elseBlock">
+    <div class="cadastro-form">
+        <form>
+            <div class="field">
+                <p class="edit-label">Qual o seu nome completo?</p>
+                <input type='text' style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="nomeCompleto" [(ngModel)]="usuario.nomeCompleto">
+            </div>
+            <div class="field">
+                <p class="edit-label">Qual o seu email?</p>
+                <input type='text' style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="email" [(ngModel)]="usuario.email">
+            </div>  
+            <div class="field">
+                <p class="edit-label">Defina um usuário:</p>
+                <input type='text' style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="nomeUsuario" [(ngModel)]="usuario.nomeUsuario">
+            </div>
+            <div class="field">
+                <p class="edit-label">Defina uma senha (mínimo 8 caracteres):</p>
+                <input type='text' style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="senha" [(ngModel)]="usuario.senha">
+            </div> 
+            <div class="field">
+                <p class="edit-label">Faça upload da foto do seu perfil:</p>
+                <input type="file" id="file" style="display:block; margin : 0 auto; width: 500px; height: 30px;" name="fotoPerfil" (change)="saveFile($event.target)">
+            </div> 
+            <button (click)="cadastrar()">CADASTRAR</button>
+        </form>
+    </div>
+</div>
+<ng-template #elseBlock>
+    <app-cadastro-sucesso></app-cadastro-sucesso>
+</ng-template>

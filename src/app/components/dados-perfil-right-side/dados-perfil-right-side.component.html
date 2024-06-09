@@ -1,0 +1,164 @@
+<div *ngIf="menuItem === 'dados-pessoais'" style="margin: 100px 0 0 200px;">
+    <form [formGroup]="formPerfil" (ngSubmit)="salvarCadastro()" style="text-align: center; display: inline-flexbox;">
+        <div>
+            <h1>Dados Pessoais</h1>
+            <label>Nome Completo:</label><br/>
+            <input type="text" maxlength="200" [value]="usuario.nomeCompleto" formControlName="nomeCompleto" required name="nomeCompleto" [(ngModel)]="usuario.nomeCompleto"><br/>
+            <label>Email:</label><br/>
+            <input type="email" maxlength="200" [value]="usuario.email" formControlName="email" required name="email" [(ngModel)]="usuario.email"><br/>
+            <label>Senha:</label><br/>
+            <input type="password" minlength="8" maxlength="200" [value]="password" formControlName="senha" required name="senha" [(ngModel)]="usuario.senha"><br/>
+        </div>
+        <div>
+            <button type="submit">Salvar</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="menuItem === 'minhas-vendas'">
+    <div style="text-align: center; display: inline-flexbox;">
+        <div>
+            <h1>Minhas Vendas</h1>
+            <div style="display: flex; margin-top: 50px; margin-left: 100px;">
+                <div *ngFor="let vendas of vendasArray">
+                    <div *ngFor="let venda of vendas" class="card-vendas">
+                        <mat-card>
+                            <mat-card-header>
+                                <mat-card-title>Título: {{ venda.titulo }}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-header>
+                                <mat-card-title>Valor recebido: R${{ venda.preco }}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-header>
+                                <mat-card-title>Data da venda: {{ venda.dataHoraVenda }}</mat-card-title>
+                            </mat-card-header>
+                        </mat-card>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="menuItem === 'minhas-compras'">
+    <div style="text-align: center; display: inline-flexbox;">
+        <div>
+            <h1>Minhas Compras</h1>
+            <div style="display: flex; margin-top: 50px; margin-left: 100px;">
+                <div *ngFor="let compras of comprasArray">
+                    <div *ngFor="let compra of compras" class="card-compras">
+                        <mat-card>
+                            <mat-card-header>
+                                <mat-card-title>Título: {{ compra.titulo }}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-header>
+                                <mat-card-title>Valor pago: R$ {{ compra.preco }}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-header>
+                                <mat-card-title>Data da compra: {{ compra.dataHoraCompra }}</mat-card-title>
+                            </mat-card-header>
+                        </mat-card>
+                    </div>    
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="menuItem === 'minhas-doacoes'">
+    <div style="text-align: center; display: inline-flexbox;">
+        <div>
+            <h1>Minhas Doações</h1>
+            <div style="display: flex; margin-top: 50px; margin-left: 100px;">
+                <div *ngFor="let doacoes of doacoesArray">
+                    <div *ngFor="let doacao of doacoes" class="card-doacoes">
+                        <mat-card>
+                            <mat-card-header>
+                                <mat-card-title>Título: {{ doacao.titulo }}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-header>
+                                <mat-card-title>Data da doação: {{ doacao.dataHoraDoacao }}</mat-card-title>
+                            </mat-card-header>
+                        </mat-card>
+                    </div>    
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="menuItem === 'meus-recebidos'">
+    <div style="text-align: center; display: inline-flexbox;">
+        <div>
+            <h1>Meus Recebidos</h1>
+            <div style="display: flex; margin-top: 50px; margin-left: 100px;">
+                <div *ngFor="let recebidos of recebidosArray">
+                    <div *ngFor="let recebido of recebidos" class="card-recebidos">
+                        <mat-card>
+                            <mat-card-header>
+                                <mat-card-title>Título: {{ recebido.titulo }}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-header>
+                                <mat-card-title>Data da doação: {{ recebido.dataHoraRecebimento }}</mat-card-title>
+                            </mat-card-header>
+                        </mat-card>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="menuItem === 'solicitacoes-amizade'">
+    <div style="text-align: center; display: inline-flexbox;">
+        <div>
+            <h1>Solicitações de Amizade</h1>
+            <div *ngFor="let solicitacaoComFoto of solicitacoesComFoto">
+                <div style="display: inline-flex;"*ngIf="!aprovada || !deletada">
+                    <div class="perfil-solicitante-img-cropper">
+                        <img src="{{'data:image/jpg;base64,' + solicitacaoComFoto.fotoPerfil}}">
+                    </div>
+                    <div>
+                        <button style="margin: 80px 20px 0 50px" (click)="aprovarAmizade(solicitacaoComFoto)">Aprovar</button>
+                    </div>
+                    <div>
+                        <button style="margin: 80px 20px 0 20px" (click)="deletarAmizade(solicitacaoComFoto)">Deletar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="menuItem === 'meu-perfil'">
+    <div style="text-align: center; display: flex; width: 500px; height: 200px;">
+        <div style="width: 200px; height: 200px; flex-shrink: 0; border-radius: 240px; background: url(../../../assets/camera.png) lightgray 50% / cover no-repeat; box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+        </div>
+        <div style="display: inline-flexbox; width: 300px; height: 100%; margin-left: 200px;">
+            <div style="margin: 50px 0 0 0">
+                <h1 style="width: 300px;">{{ usuario.nomeCompleto }}</h1>
+            </div>
+            <div style="display: inline-flex; justify-content: space-between;">
+                <div style="display: inline-flexbox; padding: 0 20px">
+                    <h5 style="text-align: center;">{{ perfil.numeroSeguidores }}</h5>
+                    <h5 style="text-align: center;">Seguidores</h5>
+                </div>
+                <div style="display: inline-flexbox; padding: 0 20px">
+                    <h5 style="text-align: center;">{{ perfil.numeroAnuncios }}</h5>
+                    <h5 style="text-align: center;">Anúncios</h5>
+                </div>
+                <div style="display: inline-flexbox; padding: 0 20px">
+                    <h5 style="text-align: center;">{{ perfil.numeroSeguindo }}</h5>
+                    <h5 style="text-align: center;">Seguindo</h5>
+                </div>  
+            </div>
+            <div style="display: flex; margin-top: 50px; margin-left: -400px;">
+                <div *ngFor="let anuncio of anuncios">
+                    <mat-card class="card">
+                        <img mat-card-image src="{{'data:image/jpg;base64,' + anuncio.fotoAnuncio}}" alt="Foto do Anúncio">
+                        <mat-card-header>
+                            <mat-card-title>{{ anuncio.titulo }}</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-actions>
+                            <button (click)="visualizar(anuncio)" mat-button>Visualizar</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
